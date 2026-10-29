@@ -71,3 +71,5 @@ nav_layer {
               &none      &kp BSPC  &kp LCTRL        &mt LSHFT RIGHTCLICK  &mt LGUI SPACE  &kp RET
     >;
 };
+};
+};
