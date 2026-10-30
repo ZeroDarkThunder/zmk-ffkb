@@ -14,4 +14,4 @@
 ---
 include:
   - board: nice_nano//zmk
-    shield: ffkb
+    shield: ffkb_v3
