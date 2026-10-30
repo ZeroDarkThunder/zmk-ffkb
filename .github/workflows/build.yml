@@ -16,7 +16,7 @@ jobs:
       - id: set-matrix
         name: Fetch Build Matrix
         run: |
-          echo 'matrix={"include":[{"board":"promicro_rp2040//zmk","shield":"ffkb_v2"}]}' >> $GITHUB_OUTPUT
+          echo 'matrix={"include":[{"board":"sparkfun_pro_micro_rp2040","shield":"ffkb_v2"}]}' >> $GITHUB_OUTPUT
   build:
     runs-on: ubuntu-latest
     container:
