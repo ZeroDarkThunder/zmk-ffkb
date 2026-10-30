@@ -16,9 +16,7 @@ jobs:
       - id: set-matrix
         name: Fetch Build Matrix
         run: |
-          matrix=$(yaml2json build.yaml | jq -c .)
-          yaml2json build.yaml
-          echo "::set-output name=matrix::${matrix}"
+          echo 'matrix={"include":[{"board":"nice_nano@2//zmk","shield":"ffkb"}]}' >> $GITHUB_OUTPUT
   build:
     runs-on: ubuntu-latest
     container:
