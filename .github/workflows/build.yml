@@ -78,13 +78,15 @@ jobs:
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename artifacts
         run: |
-          mkdir build/artifacts
+          mkdir -p build/artifacts
+          CLEAN_BOARD=$(echo "${{ matrix.board }}" | tr '/' '_')
+          ARTIFACT_BASE="${{ matrix.shield }}-${CLEAN_BOARD}-zmk"
           if [ -f build/zephyr/zmk.uf2 ]
           then
-            cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact-name }}.uf2"
+            cp build/zephyr/zmk.uf2 "build/artifacts/${ARTIFACT_BASE}.uf2"
           elif [ -f build/zephyr/zmk.hex ]
           then
-            cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
+            cp build/zephyr/zmk.hex "build/artifacts/${ARTIFACT_BASE}.hex"
           fi
       - name: Archive (${{ steps.variables.outputs.display-name }})
         uses: actions/upload-artifact@v4
