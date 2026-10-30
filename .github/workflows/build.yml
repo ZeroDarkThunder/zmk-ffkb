@@ -68,7 +68,7 @@ jobs:
         run: west zephyr-export
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
-          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/modules/lib/zmk-fingerpunch-keyboards;${GITHUB_WORKSPACE}/modules/lib/zmk-fingerpunch-controllers;${GITHUB_WORKSPACE}/modules/lib/zmk-fingerpunch-vik" ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
+          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/zmk-fingerpunch-keyboards;${GITHUB_WORKSPACE}/zmk-fingerpunch-controllers;${GITHUB_WORKSPACE}/zmk-fingerpunch-vik" ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
       - name: ${{ steps.variables.outputs.display-name }} DTS File
         if: ${{ always() }}
         run: |
