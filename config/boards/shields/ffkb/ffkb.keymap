@@ -47,7 +47,7 @@
 
         default_layer {
             label = "Default";
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp MOVE_UP MOVE_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp UP DOWN>;
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T       &kp Y  &kp U  &kp I      &kp O   &kp P    &kp BSLH
 &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G       &kp H  &kp J  &kp K      &kp L   &kp SQT  &kp SEMI
