@@ -16,7 +16,7 @@ jobs:
       - id: set-matrix
         name: Fetch Build Matrix
         run: |
-          echo 'matrix={"include":[{"board":"xivik","shield":"ffkb_v3"}]}' >> $GITHUB_OUTPUT
+          echo 'matrix={"include":[{"board":"svlinky","shield":"ffkb_v3"}]}' >> $GITHUB_OUTPUT
   build:
     runs-on: ubuntu-latest
     container:
