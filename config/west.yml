@@ -8,6 +8,7 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: main
+      import: app/manifest.yml
     - name: zmk-fingerpunch-keyboards
       remote: sadekbaroudi
       revision: main
