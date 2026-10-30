@@ -1,3 +1,3 @@
 include:
-  - board: promicro_rp2040//zmk 
+  - board: sparkfun_pro_micro_rp2040 
     shield: ffkb_v2
