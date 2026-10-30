@@ -55,7 +55,7 @@ jobs:
             zephyr/
             bootloader/
             zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('config/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -68,7 +68,7 @@ jobs:
         run: west zephyr-export
       - name: West Build
         run: |
-          west build -s zmk/app -b svlinky -- -DSHIELD=ffkb_v3 -DZMK_EXTRA_MODULES="/__w/zmk-ffkb/zmk-ffkb/zmk-fingerpunch-keyboards;/__w/zmk-ffkb/zmk-ffkb/zmk-fingerpunch-controllers;/__w/zmk-ffkb/zmk-ffkb/zmk-fingerpunch-vik"
+          west build -s zmk/app -b svlinky -- -DSHIELD=ffkb_v3 -DZMK_EXTRA_MODULES="${{ github.workspace }}/zmk-fingerpunch-keyboards;${{ github.workspace }}/zmk-fingerpunch-controllers;${{ github.workspace }}/zmk-fingerpunch-vik"
       - name: ${{ steps.variables.outputs.display-name }} DTS File
         if: ${{ always() }}
         run: |
