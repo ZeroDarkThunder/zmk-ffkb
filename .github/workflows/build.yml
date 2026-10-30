@@ -66,9 +66,9 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (${{ steps.variables.outputs.display-name }})
+      - name: West Build
         run: |
-          west build -s zmk/app -b svlinky -- -DSHIELD=ffkb_v3 -DZMK_EXTRA_MODULES="${{ github.workspace }}/zmk-fingerpunch-keyboards;${{ github.workspace }}/zmk-fingerpunch-controllers"
+          west build -s zmk/app -b svlinky -- -DSHIELD=ffkb_v3 -DZMK_EXTRA_MODULES="/__w/zmk-ffkb/zmk-ffkb/zmk-fingerpunch-keyboards;/__w/zmk-ffkb/zmk-ffkb/zmk-fingerpunch-controllers;/__w/zmk-ffkb/zmk-ffkb/zmk-fingerpunch-vik"
       - name: ${{ steps.variables.outputs.display-name }} DTS File
         if: ${{ always() }}
         run: |
