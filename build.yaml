@@ -1,4 +1,3 @@
 include:
-  - board: nice_nano//zmk
-    shield: ffkb
-    cmake-args: -DZMK_EXTRA_MODULES="${ZEPHYR_BASE}/../zmk-fingerpunch-keyboards;${ZEPHYR_BASE}/../zmk-fingerpunch-controllers;${ZEPHYR_BASE}/../zmk-fingerpunch-vik"
+  - board: nice_nano_v2//zmk
+    shield: ffkb_v2
