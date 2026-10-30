@@ -12,7 +12,6 @@ manifest:
     - name: zmk-fingerpunch-keyboards
       remote: sadekbaroudi
       revision: main
-      import: zephyr/module.yml
     - name: zmk-fingerpunch-controllers
       remote: sadekbaroudi
       revision: main
