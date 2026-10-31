@@ -1,0 +1,17 @@
+&spi0 {
+    status = "okay";
+    compatible = "raspberrypi,pico-spi";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+    cs-gpios = <&pro_micro 16 GPIO_ACTIVE_LOW>; // Adjust if your CS pin differs
+
+    shifter: 595@0 {
+        compatible = "zmk,gpio-595";
+        status = "okay";
+        gpio-controller;
+        spi-max-frequency = <200000>;
+        reg = <0>;
+        #gpio-cells = <2>;
+        ngpios = <8>; // Match the number of outputs on your shift register
+    };
+};
