@@ -1,3 +1,4 @@
 include:
   - board: svlinky 
     shield: ffkb_v3
+    snippet: zmk-usb-logging
